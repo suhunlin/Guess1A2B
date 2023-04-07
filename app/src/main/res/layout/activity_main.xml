@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingVertical="10dp"
     tools:context=".MainActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/topLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/guess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Guess"
+            android:textSize="26sp"
+            android:textAllCaps="false"
+            />
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Please input number"
+            android:gravity="center_horizontal"
+            android:layout_toLeftOf="@id/guess"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@id/guess"
+            android:inputType="phone"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/lineBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Restart"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/setting"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Setting"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topLine"
+        android:layout_above="@id/lineBottom"
+        android:background="#ff0"
+        />
+</RelativeLayout>
